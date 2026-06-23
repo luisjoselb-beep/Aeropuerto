@@ -42,9 +42,6 @@ public class LoginControlador {
                     // Centra la pantalla de reportes en el monitor
                     ventanaReportes.setLocationRelativeTo(null); 
                     
-                    // Le ponemos un texto temporal en el cuadro antes de conectar el código de tu amigo
-                    ventanaReportes.setReporteTexto("¡Login Exitoso!\n\nLa pantalla se abrió correctamente usando GridBagLayout.\nPronto se configurarán los botones de reportes aquí abajo...");
-                    
                     // Hace visible la nueva ventana
                     ventanaReportes.setVisible(true);
                     // LE DECIMOS AL CÓDIGO DE TU COMPAÑERO QUE YA PUEDE CORRER
