@@ -1,6 +1,5 @@
 package data;
 
-
 public interface Datos {
     // Formato: CODIGO_VUELO;AEROLINEA;DESTINO
     String[] datos_vuelos = {
