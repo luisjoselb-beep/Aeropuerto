@@ -1,16 +1,16 @@
-
 package aerolinea;
 
 
 public class Pasajero extends Personas{
+    
+    private String numAsiento;
+    private int valorPasaje;
 
     public Pasajero(String numAsiento, int valorPasaje, int id, String nombre, int edad, Vuelos vuelo, String categoria) {
         super(id, nombre, edad, vuelo, categoria);
         this.numAsiento = numAsiento;
         this.valorPasaje = valorPasaje;
     }
-
-        
     
     
     @Override
@@ -23,8 +23,7 @@ public class Pasajero extends Personas{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    private String numAsiento;
-    private int valorPasaje;
+   
 
     public String getNumAsiento() {
         return numAsiento;

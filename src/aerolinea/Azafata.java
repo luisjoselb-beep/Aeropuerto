@@ -1,4 +1,3 @@
-
 package aerolinea;
 
 public class Azafata extends Personas {
