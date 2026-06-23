@@ -10,17 +10,35 @@ public class Pasajero extends Personas{
         super(id, nombre, edad, vuelo, categoria);
         this.numAsiento = numAsiento;
         this.valorPasaje = valorPasaje;
+        
+        calcularCategoria();
     }
-    
     
     @Override
     public void mostrar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("=== DATOS PASAJERO ===");
+        System.out.println("ID: " + getId());
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Edad: " + getEdad() + " años");
+        System.out.println("Asiento: " + this.numAsiento);
+        System.out.println("Valor del Pasaje: $" + this.valorPasaje);
+        System.out.println("Tipo de Pasajero: " + getCategoria()); 
+        
+        if (getVuelo() != null) {
+            System.out.println("Vuelo Asignado: " + getVuelo().getVuelo() + " con destino a " + getVuelo().getDestino());
+        } else {
+            System.out.println("Vuelo Asignado: Ninguno");
+        }
+        System.out.println("---------------------");
     }
 
     @Override
     public void calcularCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (this.valorPasaje >= 400) {
+            setCategoria("VIP");
+        } else {
+            setCategoria("Turista");
+        }
     }
     
    

@@ -15,7 +15,7 @@ public interface Datos {
         "14B;380;104;Ana Beltrán;19;V001;Pasajero",
         "05C;520;105;Luis Ramirez;28;V002;Pasajero",
         "900;106;Sebastian Bautista;50;V002;Piloto",
-        "1.72;2;107;Mario Moreno;31;V002;Azafata",
+        "1.72;2;107;Maria Moreno;31;V002;Azafata",
         "02A;600;108;Gabriela Colmenares;34;V003;Pasajero"
     };
 }

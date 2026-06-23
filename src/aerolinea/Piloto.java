@@ -1,6 +1,5 @@
 package aerolinea;
 
-
 public class Piloto extends Personas {
     //atributo
     private int horas;
@@ -13,12 +12,28 @@ public class Piloto extends Personas {
     
     @Override
     public void mostrar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("=== DATOS PILOTO ===");
+        System.out.println("ID: " + getId());
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Edad: " + getEdad() + " años");
+        System.out.println("Horas de Vuelo acumuladas: " + this.horas + " hrs");
+        System.out.println("Rango de Vuelo: " + getCategoria()); 
+        
+        if (getVuelo() != null) {
+            System.out.println("Vuelo Asignado: " + getVuelo().getVuelo() + " con destino a " + getVuelo().getDestino());
+        } else {
+            System.out.println("Vuelo Asignado: Ninguno");
+        }
+        System.out.println("---------------------");
     }
 
     @Override
     public void calcularCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (this.horas >= 1000) {
+            setCategoria("Comandante");
+        } else {
+            setCategoria("Co-Piloto");
+        }
     }
     
     //getters y setters
