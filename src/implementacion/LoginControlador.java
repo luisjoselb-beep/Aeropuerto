@@ -2,6 +2,7 @@
 package implementacion;
 
 import vista.LoginVista;
+import vista.ReportesVista;//**************
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,7 +10,8 @@ public class LoginControlador {
     
     private LoginVista ventanaLogin;
     private Principal controladorPrincipal; // Referencia al main de tu compañero
-
+    private ReportesVista ventanaReportes; //**********************
+    
     // El constructor recibe la clase de tu compañero para poder despertarla luego
     public LoginControlador(Principal controladorPrincipal) {
         this.controladorPrincipal = controladorPrincipal;
@@ -32,8 +34,21 @@ public class LoginControlador {
                     ventanaLogin.mostrarMensaje("¡Acceso concedido!");
                     ventanaLogin.dispose(); // Cerramos el login
                     
+                    // =========================================================
+                    //  3. AQUÍ ABRIMOS LA PANTALLA DE REPORTES
+                    // =========================================================
+                    ventanaReportes = new ReportesVista();
+                    
+                    // Centra la pantalla de reportes en el monitor
+                    ventanaReportes.setLocationRelativeTo(null); 
+                    
+                    // Le ponemos un texto temporal en el cuadro antes de conectar el código de tu amigo
+                    ventanaReportes.setReporteTexto("¡Login Exitoso!\n\nLa pantalla se abrió correctamente usando GridBagLayout.\nPronto se configurarán los botones de reportes aquí abajo...");
+                    
+                    // Hace visible la nueva ventana
+                    ventanaReportes.setVisible(true);
                     // LE DECIMOS AL CÓDIGO DE TU COMPAÑERO QUE YA PUEDE CORRER
-                    controladorPrincipal.ejecutarSistema(); 
+                    //controladorPrincipal.ejecutarSistema(); 
                 } else {
                     ventanaLogin.mostrarMensaje("Usuario o contraseña incorrectos.");
                 }
