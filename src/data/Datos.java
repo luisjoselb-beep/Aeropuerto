@@ -8,7 +8,6 @@ public interface Datos {
         "Conviasa;V003;Amazonas"
     };
     
-    
     String[] datos_persona = {
         "12A;450;101;Martín Hernández;25;V001;Pasajero",
         "1.68;3;102;Paola Milena;30;V001;Azafata",
@@ -19,5 +18,4 @@ public interface Datos {
         "1.72;2;107;Mario Moreno;31;V002;Azafata",
         "02A;600;108;Gabriela Colmenares;34;V003;Pasajero"
     };
-
 }
