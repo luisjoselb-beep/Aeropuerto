@@ -38,14 +38,13 @@ public class LoginControlador {
                     //  3. AQUÍ ABRIMOS LA PANTALLA DE REPORTES
                     // =========================================================
                     ventanaReportes = new ReportesVista();
-                    
+                    // CORRECCIÓN ESTÉTICA: Forzamos un tamaño más ancho para que no se corten los botones
+                    ventanaReportes.setSize(700, 450);
                     // Centra la pantalla de reportes en el monitor
                     ventanaReportes.setLocationRelativeTo(null); 
                     
                     // Hace visible la nueva ventana
                     ventanaReportes.setVisible(true);
-                    // LE DECIMOS AL CÓDIGO DE TU COMPAÑERO QUE YA PUEDE CORRER
-                    //controladorPrincipal.ejecutarSistema(); 
                 } else {
                     ventanaLogin.mostrarMensaje("Usuario o contraseña incorrectos.");
                 }
