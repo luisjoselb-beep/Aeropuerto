@@ -7,24 +7,19 @@ public class Piloto extends Personas {
     public Piloto(int horas, int id, String nombre, int edad, Vuelos vuelo, String categoria) {
         super(id, nombre, edad, vuelo, categoria);
         this.horas = horas;
+        
+        calcularCategoria();
     }
     
     
     @Override
-    public void mostrar() {
-        System.out.println("=== DATOS PILOTO ===");
-        System.out.println("ID: " + getId());
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Edad: " + getEdad() + " años");
-        System.out.println("Horas de Vuelo acumuladas: " + this.horas + " hrs");
-        System.out.println("Rango de Vuelo: " + getCategoria()); 
-        
+    public String mostrar() {
+        String info = "ID: " + getId() + " | Nombre: " + getNombre() + " | Rango de Vuelo: " + getCategoria() + "\n"
+                    + "   Detalles -> Horas de vuelo: " + this.horas + " hrs";
         if (getVuelo() != null) {
-            System.out.println("Vuelo Asignado: " + getVuelo().getVuelo() + " con destino a " + getVuelo().getDestino());
-        } else {
-            System.out.println("Vuelo Asignado: Ninguno");
+            info += " | Vuelo: " + getVuelo().getVuelo() + " -> " + getVuelo().getDestino();
         }
-        System.out.println("---------------------");
+        return info;
     }
 
     @Override

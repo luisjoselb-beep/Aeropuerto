@@ -15,21 +15,13 @@ public class Pasajero extends Personas{
     }
     
     @Override
-    public void mostrar() {
-        System.out.println("=== DATOS PASAJERO ===");
-        System.out.println("ID: " + getId());
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Edad: " + getEdad() + " años");
-        System.out.println("Asiento: " + this.numAsiento);
-        System.out.println("Valor del Pasaje: $" + this.valorPasaje);
-        System.out.println("Tipo de Pasajero: " + getCategoria()); 
-        
+    public String mostrar() {
+        String info = "ID: " + getId() + " | Nombre: " + getNombre() + " | Tipo de Pasajero: " + getCategoria() + "\n"
+                    + "   Detalles -> Asiento: " + this.numAsiento + " | Pasaje: $" + this.valorPasaje;
         if (getVuelo() != null) {
-            System.out.println("Vuelo Asignado: " + getVuelo().getVuelo() + " con destino a " + getVuelo().getDestino());
-        } else {
-            System.out.println("Vuelo Asignado: Ninguno");
+            info += " | Vuelo: " + getVuelo().getVuelo() + " -> " + getVuelo().getDestino();
         }
-        System.out.println("---------------------");
+        return info;
     }
 
     @Override

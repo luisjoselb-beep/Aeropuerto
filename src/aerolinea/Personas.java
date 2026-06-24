@@ -16,7 +16,7 @@ public abstract class Personas {
         this.categoria = categoria;
     }
     
-    public abstract void mostrar ();
+    public abstract String mostrar ();
     public abstract void calcularCategoria ();
 
     public int getId() {

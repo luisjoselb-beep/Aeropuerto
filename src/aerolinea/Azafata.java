@@ -16,20 +16,13 @@ public class Azafata extends Personas {
     
     
     @Override
-    public void mostrar() {
-        System.out.println("=== DATOS AZAFATA ===");
-        System.out.println("ID: " + getId());
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Edad: " + getEdad() + " años");
-        System.out.println("Altura: " + this.altura + " m");
-        System.out.println("Idiomas dominados: " + this.idiomas);
-        System.out.println("Categoría de Vuelo: " + getCategoria());
+    public String mostrar() {
+        String info = "ID: " + getId() + " | Nombre: " + getNombre() + " | Categoría de Vuelo: "+ getCategoria() + "\n"
+                    + "   Detalles -> Altura: " + this.altura + "m | Idiomas: " + this.idiomas;
         if (getVuelo() != null) {
-            System.out.println("Vuelo Asignado: " + getVuelo().getVuelo() + " con destino a " + getVuelo().getDestino());
-        } else {
-            System.out.println("Vuelo Asignado: Ninguno");
+            info += " | Vuelo: " + getVuelo().getVuelo() + " -> " + getVuelo().getDestino();
         }
-        System.out.println("---------------------");
+        return info;
     }
 
     @Override

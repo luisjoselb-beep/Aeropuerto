@@ -92,30 +92,17 @@ public class Principal implements Datos {
 
     //Reporte
     public String mostrarCategoria() {
-        String resultado = "====== LISTADO DE PASAJEROS Y TRIPULACION ======\n";
-        for (int i = 0; i < viajeros.size(); i++) {
-        Personas p = viajeros.get(i);
-        String datosEspecificos = "";
-
-        if (p instanceof Pasajero) {
-            Pasajero pas = (Pasajero) p; 
-            datosEspecificos = "Asiento: " + pas.getNumAsiento() + " | Pasaje: $" + pas.getValorPasaje();
-            
-        } else if (p instanceof Azafata) {
-            Azafata az = (Azafata) p;
-            datosEspecificos = "Altura: " + az.getAltura() + "m | Idiomas: " + az.getIdiomas();
-            
-        } else if (p instanceof Piloto) {
-            Piloto pi = (Piloto) p;
-            datosEspecificos = "Horas de vuelo: " + pi.getHoras() + " hrs";
-        }
-
-        resultado += "ID: " + p.getId() + " | Nombre: " + p.getNombre() + " | Rol: " + p.getClass().getSimpleName() + "\n"
-                  + "   Detalles -> " + datosEspecificos + "\n"
-                  + "------------------------------------------------------------------------------------------------------\n";
-    }
-    return resultado;
+        String resultado = "====== LISTADO DE PASAJEROS Y TRIPULACION ======\n\n";
         
+        for (int i = 0; i < viajeros.size(); i++) {
+            Personas p = viajeros.get(i);
+            
+            // Aquí ocurre la magia: p.mostrar() llamará dinámicamente al String 
+            // de Pasajero, Azafata o Piloto según corresponda.
+            resultado += p.mostrar() + "\n"
+                      + "------------------------------------------------------------------------------------------------------\n";
+        }
+        return resultado;
     }
 
     //Destino Favorito
