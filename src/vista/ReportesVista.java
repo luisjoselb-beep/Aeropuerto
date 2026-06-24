@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package vista;
 
-/**
- *
- * @author Usuario
- */
+import javax.swing.JButton;
+
 public class ReportesVista extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ReportesVista.class.getName());
 
-    /**
-     * Creates new form ReportesVista
-     */
     public ReportesVista() {
         initComponents();
     }
@@ -46,7 +37,7 @@ public class ReportesVista extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Aeropuerto Santo Domingo");
 
@@ -66,10 +57,10 @@ public class ReportesVista extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,6 +84,11 @@ public class ReportesVista extends javax.swing.JFrame {
 
         btnCargarDatos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCargarDatos.setText("CARGAR DATOS");
+        btnCargarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarDatosActionPerformed(evt);
+            }
+        });
 
         btnDestino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDestino.setText("DESTINO FAVORITO");
@@ -147,7 +143,7 @@ public class ReportesVista extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,6 +168,10 @@ public class ReportesVista extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnCargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarDatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCargarDatosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,7 +212,29 @@ public class ReportesVista extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     public void setReporteTexto(String texto) {
-        // Usamos jTextArea1 que es el nombre real de tu cuadro de texto
         jTextArea1.setText(texto); 
+        jTextArea1.setCaretPosition(0);
     }
+    
+    public void cambiarTamanoTextoNormal(int tamano) {
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, tamano));
+    }
+
+    
+    public JButton getBtnCargarDatos() {
+        return btnCargarDatos;
+    }
+
+    public JButton getBtnDestino() {
+        return btnDestino;
+    }
+
+    public JButton getBtnPiloto() {
+        return btnPiloto;
+    }
+
+    public JButton getBtnReporte() {
+        return btnReporte;
+    }
+    
 }

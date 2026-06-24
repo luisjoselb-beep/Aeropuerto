@@ -16,20 +16,6 @@ public class Principal implements Datos {
         LoginControlador login = new LoginControlador(programa);
         login.iniciar();
     }    
-     public void ejecutarSistema() {
-        cargarDatos();
-        
-        // Se imprimen los metodos
-        System.out.println(mostrarCategoria());
-        System.out.println();
-        
-        System.out.println("====== ESTADISTICAS DE DESTINOS ======");
-        System.out.println(destinoFavorito());
-        System.out.println();
-        
-        System.out.println("====== RECONOCIMIENTO AL PILOTO ======");
-        System.out.println(mejorPiloto());
-    }
 
     private Vuelos buscarVuelo(String codigo) {
         for (Vuelos v : viajes) {
@@ -108,11 +94,28 @@ public class Principal implements Datos {
     public String mostrarCategoria() {
         String resultado = "====== LISTADO DE PASAJEROS Y TRIPULACION ======\n";
         for (int i = 0; i < viajeros.size(); i++) {
-            Personas p = viajeros.get(i);
-            p.mostrar(); 
-            resultado += "ID: " + p.getId() + " | Nombre: " + p.getNombre() + " | Rol: " + p.getClass().getSimpleName() + "\n";
+        Personas p = viajeros.get(i);
+        String datosEspecificos = "";
+
+        if (p instanceof Pasajero) {
+            Pasajero pas = (Pasajero) p; 
+            datosEspecificos = "Asiento: " + pas.getNumAsiento() + " | Pasaje: $" + pas.getValorPasaje();
+            
+        } else if (p instanceof Azafata) {
+            Azafata az = (Azafata) p;
+            datosEspecificos = "Altura: " + az.getAltura() + "m | Idiomas: " + az.getIdiomas();
+            
+        } else if (p instanceof Piloto) {
+            Piloto pi = (Piloto) p;
+            datosEspecificos = "Horas de vuelo: " + pi.getHoras() + " hrs";
         }
-        return resultado;
+
+        resultado += "ID: " + p.getId() + " | Nombre: " + p.getNombre() + " | Rol: " + p.getClass().getSimpleName() + "\n"
+                  + "   Detalles -> " + datosEspecificos + "\n"
+                  + "------------------------------------------------------------------------------------------------------\n";
+    }
+    return resultado;
+        
     }
 
     //Destino Favorito

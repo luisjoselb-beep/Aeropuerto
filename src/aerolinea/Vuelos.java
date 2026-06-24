@@ -1,6 +1,4 @@
-
 package aerolinea;
-
 
 public class Vuelos {
     
